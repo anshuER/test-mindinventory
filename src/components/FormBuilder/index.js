@@ -13,7 +13,6 @@ const FormBuilder = ({ addFormElement, elements }) => {
   };
 
   const handleSubmit = () => {
-    console.log('form', formValues);
     addFormElement(formValues);
   };
 
@@ -50,18 +49,28 @@ const FormBuilder = ({ addFormElement, elements }) => {
 
       <div className=' flex flex-col gap-4'>
         <h1 className='text-2xl'>Validations</h1>
-        <InputBox
-          name={'min'}
-          placeholder={'Minimum Length'}
-          type='number'
-          onChange={(e) => updateFormElements('min', e.target.value)}
-        />
-        <InputBox
-          name={'max'}
-          placeholder={'Maximum Length'}
-          type='number'
-          onChange={(e) => updateFormElements('max', e.target.value)}
-        />
+        {formValues?.type === 'text' && (
+          <>
+            <InputBox
+              name={'min'}
+              placeholder={'Minimum Length'}
+              type='number'
+              onChange={(e) => updateFormElements('min', e.target.value)}
+            />
+            <InputBox
+              name={'max'}
+              placeholder={'Maximum Length'}
+              type='number'
+              onChange={(e) => updateFormElements('max', e.target.value)}
+            />
+
+            <InputBox
+              name={'regex'}
+              placeholder={'Regex'}
+              onChange={(e) => updateFormElements('regex', e.target.value)}
+            />
+          </>
+        )}
         <div className='flex items-center'>
           <label
             for='required'
@@ -81,11 +90,6 @@ const FormBuilder = ({ addFormElement, elements }) => {
             }
           />
         </div>
-        <InputBox
-          name={'regex'}
-          placeholder={'Regex'}
-          onChange={(e) => updateFormElements('regex', e.target.value)}
-        />
       </div>
 
       <div className=' flex flex-col gap-4'>
