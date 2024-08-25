@@ -31,12 +31,15 @@ function App() {
   }, []);
 
   return (
-    <div className='flex flex-col items-center justify-center my-12'>
-      <h1 className='text-5xl font-bold'>Create Form</h1>
-      <FormBuilder elements={formElements} addFormElement={addFormElement} />
-      {formElements && formElements.length > 0 && (
-        <FormViewer elements={formElements} />
-      )}
+    <div className='grid grid-cols-2  items-center  gap-8 my-12'>
+      <div className='w-full flex flex-col gap-6 justify-center items-center '>
+        <FormBuilder elements={formElements} addFormElement={addFormElement} />
+      </div>
+      <div className='w-full flex flex-col gap-6 justify-center items-center '>
+        {formElements && formElements.length > 0 && (
+          <FormViewer elements={formElements} />
+        )}
+      </div>
     </div>
   );
 }

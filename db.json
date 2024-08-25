@@ -5,6 +5,12 @@
       "type": "text",
       "name": "name",
       "min": 5
+    },
+    {
+      "id": "b72b",
+      "type": "text",
+      "name": "number",
+      "regex": "/[0-9]/"
     }
   ]
 }
