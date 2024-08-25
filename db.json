@@ -1,17 +1,10 @@
 {
   "forms": [
     {
-      "id": "9483",
-      "type": "select",
-      "name": "state",
-      "options": "1,2,3"
-    },
-    {
-      "id": "fecc",
-      "type": "select",
-      "name": "country",
-      "options": "2,3,4",
-      "depElement": "state"
+      "id": "45db",
+      "type": "text",
+      "name": "name",
+      "min": 5
     }
   ]
 }
