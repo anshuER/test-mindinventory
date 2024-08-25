@@ -1,9 +1,17 @@
 {
   "forms": [
     {
-      "id": "8f29",
-      "type": "radio",
-      "name": "name"
+      "id": "9483",
+      "type": "select",
+      "name": "state",
+      "options": "1,2,3"
+    },
+    {
+      "id": "fecc",
+      "type": "select",
+      "name": "country",
+      "options": "2,3,4",
+      "depElement": "state"
     }
   ]
 }

@@ -71,6 +71,18 @@ const FormBuilder = ({ addFormElement, elements }) => {
             />
           </>
         )}
+        {formValues?.type === 'select' && (
+          <div className='flex flex-col gap-2'>
+            <InputBox
+              name={'options'}
+              placeholder={'Options'}
+              onChange={(e) => updateFormElements('options', e.target.value)}
+            />
+            <p className='text-blue-500 text-xs font-bold'>
+              Note: write options separated by , only
+            </p>
+          </div>
+        )}
         <div className='flex items-center'>
           <label
             for='required'
