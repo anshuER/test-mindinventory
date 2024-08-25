@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import FormBuilder from './components/FormBuilder';
+import FormViewer from './components/FormViewer';
 
 function App() {
   const [formElements, setFormElements] = useState([]);
@@ -16,7 +17,7 @@ function App() {
       <h1 className='text-5xl font-bold'>Create Form</h1>
       <FormBuilder elements={formElements} addFormElement={addFormElement} />
       {formElements.map((element, index) => {
-        return <h1 key={index}>{element.name}</h1>;
+        return <FormViewer key={index} element={element} />;
       })}
     </div>
   );
